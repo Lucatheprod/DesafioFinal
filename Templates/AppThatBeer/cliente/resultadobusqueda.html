@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block ContenidoQueCambia %}
+    {% if clientes %}
+        <br>
+        <h4>Resultados de busqueda: "{{ nombre }}"</h4>
+        <br>
+        <form action="{% url 'AppThatBeerBuscarCliente' %}" method="GET">
+            <input type="text" name="nombre" id="nombre">
+            <input type="submit" style="background-color:orangered; color:white "  value="Buscar por nombre" >
+        </form>
+        <br>
+        <h5><b>Los clientes disponibles son:</b></h5>
+        <br>
+        {% for c in clientes %}
+            • <b>Nombre:        {{c.nombre}}</b><br>
+            • Apellido:         {{c.apellido}}<br>
+            • Email:            {{c.email}}<br>
+            • Direccion:        {{c.direccion}}<br>
+            • Provincia:        {{c.provincia}}<br>
+            • Código Postal:    {{c.cp}}<br>
+            • DNI:              {{c.dni}}<br>
+            <br>
+        {% endfor %}
+    {% else %}
+        <h5>No hay clientes disponibles para esta busqueda</h5>
+    {% endif %}
+    <a class="btn btn-light btn-xl" style="background-color:orangered; color:white " href="{% url 'AppThatBeerClientes' %}">Volver al listado completo</a>
+{% endblock %}

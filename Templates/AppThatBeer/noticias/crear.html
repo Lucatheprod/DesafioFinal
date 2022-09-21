@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block ContenidoQueCambia %}
+<h5>Agregar una noticia:</h5>
+
+
+
+{% if noticia_form.errors %}
+<p style="color: red">Están mal los datos, revisar</p>
+
+{% endif %}
+
+
+
+    <form form enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+        <table>
+            {{ noticia_form.media }}
+            {{ noticia_form.as_table }}
+
+        </table>
+       
+        <input  class="btn btn-primary btn-lg" type="submit" value="Agregar Noticia">
+    </form>
+
+   
+    
+
+{% endblock %}

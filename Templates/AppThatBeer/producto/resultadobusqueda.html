@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+{% block ContenidoQueCambia %}
+    {% if productos %}
+        <br>
+        <h4>Resultados de busqueda: "{{ variedad }}"</h4>
+        <br>
+        <form action="{% url 'AppThatBeerBuscarProducto' %}" method="GET">
+            <input type="text" name="variedad" id="variedad">
+            <input type="submit" style="background-color:orangered; color:white "  value="Buscar producto" >
+        </form>
+        <br>
+        <h5><b>Los productos disponibles son:</b></h5>
+        <br>
+        {% for producto in productos %}
+            <p>
+                <li><b>Código:</b> {{ producto.codigo }} -
+                <b>Nombre:</b> {{ producto.nombre }} -
+                <b>Variedad:</b> {{ producto.variedad }} -
+                <b>Contenido neto:</b> {{ producto.contenido_ml }} -
+                <b>Descripción:</b> {{ producto.descripcion }}
+                    {% if user.is_authenticated %}
+                        {% if user.is_staff %}
+                <a class="btn btn-primary btn-sm" href="{% url 'AppThatBeerEditarProducto' producto.codigo %}">Editar</a>
+                <a class="btn btn-primary btn-sm" href="{% url 'AppThatBeerEliminarProducto' producto.codigo %}">Eliminar</a>
+                        {% endif %}
+                    {% endif %}
+                </li>
+                <br>
+            </p>
+        {% endfor %}
+    {% else %}
+        <h5>No hay productos disponibles en este momento</h5>
+    {% endif %}
+    <a class="btn btn-light btn-xl" style="background-color:orangered; color:white " href="{% url 'AppThatBeerLeerProductos' %}">Volver al listado completo</a>
+{% endblock %}

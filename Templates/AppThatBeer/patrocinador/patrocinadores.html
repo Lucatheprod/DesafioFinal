@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block ContenidoQueCambia %}
+    <br>
+    <h4>Nuestros patrocinadores:</h4>
+    <br>
+    <form action="{% url 'AppThatBeerBuscarPatrocinador' %}" method="GET">
+        <input type="text" name="nombre" id="nombre">
+        <input type="submit" style="background-color:orangered; color:white "  value="Buscar por nombre" >
+    </form>
+    <br>
+{% for p in patrocinadores %}
+    • <b>Nombre:        {{p.nombre}}</b><br>
+    • Rubro:            {{p.rubro}}<br>
+    • Slogan:           {{p.slogan}}<br>
+    • Años Antigüedad:  {{p.antiguedad_anios}}<br>
+    • Web:              <a href="{{p.web}}">{{p.web}}</a><br>
+    <br>
+{% endfor %}
+    {% if user.is_authenticated %}
+        {% if user.is_staff %}
+    <a class="btn btn-light btn-xl" style="background-color:orangered; color:white " href="{% url 'AppThatBeerCrearPatrocinador' %}">AGREGAR PATROCINADOR</a>
+        {% endif %}
+    {% endif %}
+{% endblock %}

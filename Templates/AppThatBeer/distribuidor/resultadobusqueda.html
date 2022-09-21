@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block ContenidoQueCambia %}
+    {% if distribuidores %}
+        <br>
+        <h4>Resultados de busqueda: "{{ provincia }}"</h4>
+        <br>
+        <form action="{% url 'AppThatBeerBuscarDistribuidor' %}" method="GET">
+            <input type="text" name="provincia" id="provincia">
+            <input type="submit" style="background-color:orangered; color:white "  value="Buscar por provincia" >
+        </form>
+        <br>
+        <h5><b>Los distribuidores disponibles son:</b></h5>
+        <br>
+        {% for d in distribuidores %}
+            • <b>Nombre:        {{d.nombre}}</b><br>
+            • Cuit:             {{d.cuit}}<br>
+            • Direccion:        {{d.direccion}}<br>
+            • Provincia:        {{d.provincia}}<br>
+            • Descuento:        {{d.descuento}}<br>
+            • Web:<a href="">   {{d.web}}</a><br>
+            <br>
+        {% endfor %}
+    {% else %}
+        <h5>No hay distribuidores disponibles en {{ Provincia }} en este momento</h5>
+    {% endif %}
+    <a class="btn btn-light btn-xl" style="background-color:orangered; color:white " href="{% url 'AppThatBeerDistribuidores' %}">Volver al listado completo</a>
+{% endblock %}

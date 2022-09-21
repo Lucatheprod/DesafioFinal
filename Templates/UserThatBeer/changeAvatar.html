@@ -1,0 +1,31 @@
+
+
+
+{% extends 'index.html' %}
+
+{% block ContenidoQueCambia %}
+<h3> Cambia tu avatar:  </h3>
+
+
+<h5> Avatar actual: </h5>
+{% if avatar %}
+<li class="nav-item"><img src="{{ user.avatar.imagen.url }}" width="250"; height:= "250";  alt=""></li> 
+
+{% else %}
+<br> El avatar no existe </br>
+{% endif %}
+
+<form form enctype="multipart/form-data" method="POST">
+{% csrf_token %}
+
+{{form.as_p}}
+
+<input type="submit", style="background-color:orangered; color:white " value="Enviar">
+</form>
+<br><br><br>
+
+
+
+<a class="btn btn-light btn-xl" style="background-color:orangered; color:white " href="{% url 'UserThatBeerPassword' %}">Cambiar contraseña</a>
+
+{% endblock ContenidoQueCambia%}

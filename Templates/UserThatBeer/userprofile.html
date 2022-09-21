@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block ContenidoQueCambia %}
+<h3> Editar Perfil:  </h3>
+
+
+<form action="" method="POST">
+{% csrf_token %}
+
+{{form.as_p}}
+
+<input type="submit", style="background-color:orangered; color:white " value="Enviar">
+</form>
+<br><br><br>
+
+
+
+<a class="btn btn-light btn-xl" style="background-color:orangered; color:white " href="{% url 'UserThatBeerPassword' %}">Cambiar contraseña</a>
+<a class="btn btn-light btn-xl" style="background-color:orangered; color:white " href="{% url 'UserThatBeerChangeBio' user.id  %}">Cambiar Avatar</a>
+
+
+{% endblock ContenidoQueCambia%}

@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block ContenidoQueCambia %}
+    <h5>REGISTRO</h5>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <input type="submit" value="{{ name_submit }}">
+    </form>
+
+{% endblock ContenidoQueCambia%}

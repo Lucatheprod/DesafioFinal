@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% block ContenidoQueCambia %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<br><br><br><br>
+
+    <form id="post-form" method="POST" action="checkview">
+        {% csrf_token %}
+        <label><b>Nombre de la Sala</b> <br>(si no existe, se creará)</label>
+        <input type="text" name="room_name" id="room_name" width="100px" />
+        <label><b>Nombre que usaras para chatear</b> <br>(puedes elegir el que gustes)</label>
+        <input type="text" name="username" id="username" width="100px" />
+        <input type="submit" value="Entrar a la Sala">
+    </form>
+
+    <br><br><br><br><br><br>
+{% endblock %}
+
+<br><br>
+</html>

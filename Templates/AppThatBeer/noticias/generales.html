@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% block ContenidoQueCambia %}
+
+    {% if noticias %}
+        <h5>Nuestras noticias:</h5>
+
+        {% for n in noticias %}
+            <p>
+                <h4>Título: {{ n.titulo }} -</h4>
+                <br>
+                <h5>Subtítulo: {{ n.subtitulo }} -</h5>
+                <br>
+                {{ n.cuerpo }}...
+                <a class="btn btn-primary btn-sm" href="{% url 'AppThatBeerLeerNoticia' n.titulo %}">Ver más</a>
+
+                <br>
+                <br>
+
+
+            </p>
+        {% endfor %}
+    {% else %}
+        <h5>No hay noticias disponibles en este momento</h5>
+    {% endif %}
+    <br>
+    <br>
+    {% if user.is_authenticated %}
+    <a class="btn btn-light btn-xl" style="background-color:orangered; color:white " href="{% url 'AppThatBeerCrearNoticia' %}">  AGREGAR PUBLICACION</a>
+    {% endif %}
+{% endblock %}

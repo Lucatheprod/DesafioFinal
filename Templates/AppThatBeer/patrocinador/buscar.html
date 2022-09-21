@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block ContenidoQueCambia %}
+<br>
+<h4>Buscar Patrocinador por Nombre:</h4>
+<br>
+<br>
+
+    <form action="/patrocinadores/resultadobusqueda" method="GET">
+        <input type="text" name="nombre" id="nombre">
+        <input type="submit" style="background-color:orangered; color:white " value="Buscar patrocinador">
+
+    </form>
+
+{% endblock %}

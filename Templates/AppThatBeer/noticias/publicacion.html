@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% block ContenidoQueCambia %}
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Post content-->
+                    <article>
+                        <!-- Post header-->
+                        <header class="mb-4">
+                            <!-- Post title-->
+                            <h1 class="fw-bolder mb-1">{{ noticia.titulo }}</h1>
+                            <!-- Post meta content-->
+                            <div class="text-muted fst-italic mb-2">Posted on {{ noticia.fecha_posteo }}</div>
+                        </header>
+                        <!-- Preview image figure-->
+                        <figure class="mb-4"><img class="img-fluid rounded" src="{{ noticia.imagen.url }}" alt="..." /></figure>
+                        <!-- Post content-->
+                        <section class="mb-5">
+                            <p class="fs-5 mb-4">{{ noticia.cuerpo }}</p>
+                            </section>
+                    </article>
+                    <a class="btn btn-light btn-xl" style="background-color:orangered; " href="{% url 'AppThatBeerNoticias' %}">VOLVER A NOTICIAS</a>
+                </div>
+            </div>
+        </div>
+{% endblock %}
