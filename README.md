@@ -1,38 +1,39 @@
 ﻿# Proyecto 'ThatBeer' - Estigarribia, Scardaccione, Peña Machado
 
-## Introducción:
-1 - El usuario ingresa al HOME (/AppThatBeer)
+El proyecto fue realizado en su mayoría por Luciano Estigarribia y Luca Scardaccione, siendo que Luis Peña Machado no se ha presentado a diversas reuniones que tuvimos para llevar a cabo el trabajo.
 
-2 - En la parte superior se encuentra la barra de navegación, donde puede elegir a qué sección del sitio dirigirse (Vistas: HOME / PRODUCTOS / DISTRIBUIDORES / CLIENTES / PATROCINADORES / NOTICIAS / SOBRE NOSOTROS) Si el usuario está LOGUEADO también puede Editar su perfil, cambiar el avatar y la password. Si el usuario no está LOGUEADO , puede Registrarse o Iniciar Sesión.
+Creación del proyecto y AppThatBeer . LUCA SCARDACCIONE - LUCIANO ESTIGARRIBIA 
+Creación de Models de AppThatBeer . LUCIANO ESTIGARRIBIA 
+Funcionalidades AppThatBeer . LUCA SCARDACCIONE - LUCIANO ESTIGARRIBIA  
+Elección de Template BASE (index.html) , Implementación del mismo y Diseño . LUCA SCARDACCIONE
+Creación de App UserThatBeer . LUCIANO ESTIGARRIBIA 
+Implementaciones, creación de modelos, formularios y solución de errores . LUCA SCARDACCIONE - LUCIANO ESTIGARRIBIA  
+Funcionalidades UserThatBeer . LUCA SCARDACCIONE - LUCIANO ESTIGARRIBIA  
+Creación de App de Mensajes . LUCA SCARDACCIONE 
 
-3 - Puede desplazarse por todo el Home, donde tendrá primero nuestro Slogan y un botón para conocer los productos, que dirigirá a la vista de PRODUCTOS, al igual que el botón de la barra de navegación.
 
-4 - Dentro del Home se presenta el apartado de noticias con un botón para conocer la variedad de la cerveza ganadora, asi como también un botón que dirige a la sección de NOTICIAS donde el Usuario puede ver el detalle de todas las Noticias, y cada una de ellas, pulsando en el botón "Ver más" asi como también Agregar publicaciones. 
+Trabajamos como un equipo durante todo el proceso, si bien repartimos las tareas nos apoyamos mutuamente y tuvimos reuniones para trabajar juntos en el proyecto, a pesar de las limitaciones de tiempo que nos condicionaron en todo momento. 
 
-5- Se presenta parte de las características que distinguen a la empresa de las demás, y un botón “CONOCÉ MÁS” que dirige hacia la sección SOBRE NOSOTROS al igual que la barra de navegación.
+DETALLES QUE NOS FALTARON IMPLEMENTAR / TERMINAR DE CERRAR: 
 
-6- Luego presenta nuestros patrocinadores, y un pequeño formulario para un sorteo a conocer nuestra fábrica.
+•A lo largo del desarrollo del proyecto, nos surgieron muchos errores que debimos solucionar a través de métodos alternativos a los que se nos proporcionaron en las Clases de CoderHouse y en las Diapositivas, por ende nos quitó bastante tiempo operativo para terminar de pulir las siguientes Funcionalidades:
 
-7- Al final del HOME, podemos ver un link para unirse a nuestro canal de Discord.
+*Poder Crear Noticias con RichTextField de ckeditor* (No logramos implementarlo al funcionamiento que ya teníamos creado) 
+*Poder listar los Mensajes en la App de Mensajes segun el Room seleccionado* 
+*Que el Nombre que se utiliza en la App de Mensajes refiera al modelo User / AbstractBaseUser como un OneToOneField* 
 
-8- Adicionalmente en la url '/admin' se encuentra la base de datos de todas las clases (ver info superuser en archivo 'admin.txt') o bien crear desde consola.
+Dentro de la carpeta del Proyecto se encuentra un archivo requirements.txt donde pueden encontrarse todos los requerimientos necesarios para correr el proyecto. 
+*ATENCIÓN: Si bien ckeditor no fue implementado si es un requerimiento INSTALARLO, para poder correr el proyecto*
 
-## Funcionalidades
+En la carpeta del Proyecto se encuentra una CARPETA llamada TestCases, donde están documentados los Casos de Prueba que realizamos antes de la ENTREGA FINAL. 
+(Todas las funcionalidades fueron probadas hasta el útlimo momento , para poder asi evitar errores de arrastre) 
+En la carpeta del Proyecto también se encuentra una CARPETA llamada VIDEO , donde se puede ver la Web funcionando. 
 
-#### AGREGAR / CREAR:
-El usuario tiene la posibilidad de insertar datos a las clases de los models (PRODUCTOS / CLIENTES / DISTRIBUIDORES / PATROCINADORES / NOTICIAS )
+Muchas gracias por tomarse el tiempo para corregir nuestro proyecto, desde ya mil disculpas por entregar tan sobre la fecha. 
+Para nosotros es muy importante aprobar esta entrega, por ende dedicamos lo máximo del tiempo que tuvimos disponible al Proyecto, a pesar de que estuvimos varios días trabajando sin respuesta de nuestro tutor asignado, y prácticamente con un compañero menos, hicimos todo lo que se encontraba a nuestro alcance para entregarlo en las mejores condiciones posibles. 
 
-Dichos formularios se encuentran en sus propias vistas, a las cuales podemos acceder desde el HTML de su clase. Por ejemplo:
 
-Para agregar un producto, ingresamos a la vista de PRODUCTOS, y clickeamos donde dice “AGREGAR PRODUCTO”. Esta acción nos dirigirá a la vista AGREGAR PRODUCTO, donde podremos realizar esta acción. 
 
-#### BUSCAR:
 
-Incluimos también la funcionalidad de BUSCAR en las Views, para que se pueda buscar en la base de datos, según el atributo correspondiente (por ejemplo: Producto se busca por VARIEDAD). 
 
-* LOGIN - REGISTER - CHANGE PASSWORD - CHANGE AVATAR * 
-
-Añadimos tanto un Login, un Register y funciones de CAMBIAR CONTRASEÑA, EDITAR PERFIL, CAMBIAR AVATAR, para que el usuario pueda personalizar su perfil.
-
-Algunas funcionalidades solo están disponibles si el Usuario se encuentra logueado.
 
